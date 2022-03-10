@@ -1,5 +1,5 @@
 {
-  "name": "x-tools",
+	"name": "x-tools",
 	"displayName": "x-tools",
 	"description": "",
 	"version": "0.0.1",
@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:x-tools.helloWorld"
+		"*"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -19,7 +19,25 @@
 				"command": "x-tools.helloWorld",
 				"title": "Hello World"
 			}
-		]
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "xTools",
+					"title": "xTools",
+					"icon": "src/media/flash.svg"
+				}
+			]
+		},
+		"views": {
+			"xTools": [
+				{
+					"type": "webview",
+					"id": "xTools.Webview",
+					"name": "xTools"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
